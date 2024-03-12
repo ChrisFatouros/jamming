@@ -1,0 +1,11 @@
+.results {
+    background-color: rgba(0, 0, 0, .5);
+    width: 40vw;
+    height: auto;
+    display: grid;
+    text-align: left;
+    border-radius: 10px;
+    color: white;
+    padding: 0vh 2vw;
+    margin-top: 5vh;
+}
