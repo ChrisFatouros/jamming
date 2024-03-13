@@ -9,3 +9,15 @@
     padding: 0vh 2vw;
     margin-top: 5vh;
 }
+
+.resultsTitle {
+    color: aliceblue;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    font-size: 30px;
+    height: 50px;
+    border: none;
+    margin-top: 1em;
+    padding-top: 1vh;
+
+}

@@ -29,6 +29,7 @@ input[type="text"], input[type="password"], textarea, select {
 .container {
     display: flex;
     justify-content: center;
+    align-items: flex-start;
     gap: 5vw;
     width: 80vw;
 }

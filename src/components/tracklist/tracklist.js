@@ -1,10 +1,26 @@
-import '../tracklist/tracklist.css'
+import '../tracklist/tracklist.css';
+import '../track/track.css';
+import Track from '../track/track.js';
+
+let playlist = [];
+
+export function addToPlaylist(track) {
+  playlist.push(track);
+}
+
+export function getPlaylist() {
+  return playlist;
+}
 
 function Tracklist() {
     return (
       <div className="tracklist">
-        <h4>Tracklist</h4>
-
+        <input type='text' defaultValue="Playlist Name" className='playlistTitle'>
+        </input>
+        <hr />
+          <ul className='playlistList'>
+            <Track />
+          </ul>
         <button className='saveToButton'>Add to Spotify</button>
     </div>
     );
