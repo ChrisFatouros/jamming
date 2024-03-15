@@ -1,5 +1,6 @@
-import '../track/track.css';
+// Track.js
 import React from 'react';
+import '../track/track.css';
 
 const tracks = [
   {
@@ -22,10 +23,9 @@ const tracks = [
   }
 ];
 
-function Track() {
-
-  const addSong = (track) => {
-    alert("Selected track: " + JSON.stringify(track));
+function Track({ onAddToTracklist }) {
+  const handleAddToTracklist = (track) => {
+    onAddToTracklist(track);
   };
 
   return (
@@ -35,14 +35,14 @@ function Track() {
           <li key={track.id}>
             <div className="trackContainer">
               <div className="title">{track.title}</div>
-              <div className="artist">{track.artist} |<span className='album'> {track.album}</span> </div>
-              <button className="addButton" onClick={() => addSong(track)}>+</button>
+              <div className="artist">{track.artist} | <span className='album'>{track.album}</span></div>
+              <button className="addButton" onClick={() => handleAddToTracklist(track)}>+</button>
             </div>
           </li>
         ))}
       </ul>
     </div>
   );
-};
+}
 
 export default Track;
