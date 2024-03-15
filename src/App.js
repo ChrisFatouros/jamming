@@ -7,6 +7,8 @@ import Tracklist from './components/tracklist/tracklist.js';
 import SearchForm from './components/search/search.js';
 
 function App() {
+
+
   return (
     <div className="App bgImg">
       <header className="headerNav">Jammming</header>

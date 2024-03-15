@@ -1,6 +1,5 @@
 import '../track/track.css';
 import React from 'react';
-import { addToPlaylist } from '../tracklist/tracklist.js';
 
 const tracks = [
   {
@@ -27,7 +26,6 @@ function Track() {
 
   const addSong = (track) => {
     alert("Selected track: " + JSON.stringify(track));
-    addToPlaylist(track);
   };
 
   return (
