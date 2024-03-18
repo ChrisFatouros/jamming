@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App bgImg">
-      <header className="headerNav">Jammming</header>
+      <header className="headerNav">Harmony Hub</header>
 
       <SearchForm />
 
