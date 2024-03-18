@@ -23,9 +23,6 @@ function Track() {
       album: "Album 3"
     }
   ];
-  
-  let [SelectedSongs, SetSelectedSongs] = useState([]);
-
 
   return (
     <>  
@@ -37,9 +34,7 @@ function Track() {
             <div className="trackContainer">
               <div className="title">{track.title}</div>
               <div className="artist">{track.artist} |<span className='album'> {track.album}</span> </div>
-              <button className="addButton" onClick={() => alert(JSON.stringify(track))}>Song Info</button>
-              <button onClick={() => { SetSelectedSongs([...SelectedSongs, track])}}>Add Song to new Array</button>
-              <button onClick={() => alert(JSON.stringify(SelectedSongs))}>Show New Array</button>
+              <button className="addButton" onClick={() => alert(JSON.stringify(track))}>+</button>
             </div>
           </li>
         ))}

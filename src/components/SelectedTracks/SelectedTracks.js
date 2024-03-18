@@ -1,11 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../track/track.js';
-import SelectedSongs from '../track/track.js'
 
-function ShowSelectedTracks(SelectedSongs) {
+function ShowSelectedTracks() {
   
+    let SelectedSongs = [{      id: 1,
+        title: "Song Title 1",
+        artist: "Artist 1",
+        album: "Album 1"}];
+
     return (
-      <>  
+      <div>  
         <ul>
           {SelectedSongs.map(SelectedSongs => (
             <li key={SelectedSongs.id}>
@@ -17,8 +21,8 @@ function ShowSelectedTracks(SelectedSongs) {
             </li>
           ))}
         </ul>
-      </>
+      </div>
     );
   };
   
-  export default ShowSelectedTracks;
+export default ShowSelectedTracks;
