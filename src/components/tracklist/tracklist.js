@@ -1,3 +1,5 @@
+// Tracklist.js
+import React from 'react';
 import '../tracklist/tracklist.css';
 import '../track/track.css';
 import '../AddSong/AddSong.js';
@@ -17,7 +19,5 @@ function Tracklist() {
 
         <button className='saveToButton'>Add to Spotify</button>
     </div>
-    );
-  }
-  
-  export default Tracklist;
+  );
+}

@@ -1,3 +1,5 @@
+// Track.js
+import React from 'react';
 import '../track/track.css';
 import React, { useState } from 'react';
 
@@ -46,6 +48,6 @@ function Track() {
       </ul>
     </>
   );
-};
+}
 
 export default Track;
