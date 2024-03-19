@@ -24,7 +24,7 @@ function App() {
       <div className='container'>
         <ParentComponent />
       </div>
-      
+
 
     </div>
   );
