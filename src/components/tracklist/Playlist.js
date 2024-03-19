@@ -5,10 +5,10 @@ import '../SelectedTracks/SelectedTracks.js';
 import ParentComponent from '../tracklist/ParentComponent.js';
 
 
-function Playlist({tracklist, removeTrack}) {
+function Playlist({tracklist, removeTrack, handleSubmit}) {
     return (
       <div className="tracklist">
-        <input type='text' defaultValue="Playlist Name" className='playlistTitle'>
+        <input id='plName' type='text' defaultValue="Playlist Name" className='playlistTitle'>
         </input>
         <hr />
 
@@ -28,7 +28,7 @@ function Playlist({tracklist, removeTrack}) {
           </ul>
         </div>
 
-        <button className='saveToButton'>Add to Spotify</button>
+        <button className='saveToButton' onClick={handleSubmit} >Add to Spotify</button>
     </div>
     );
   }
