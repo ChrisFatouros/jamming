@@ -7,14 +7,22 @@ function ParentComponent() {
   const [tracklist, setTracklist] = useState([]);
 
   function addToTracklist(track) {
-    setTracklist([...tracklist, track]);
-    console.log(tracklist);
-    };
+    if (!tracklist.some(item => item.track.id === track.track.id)) {
+      setTracklist([...tracklist, track]);
+    } else {
+      console.log("Track already exists in the playlist.");
+    }
+  }
+  
+  function removeTrack(track) {
+    const newTracklist = tracklist.filter(item => item.track.id !== track.track.id);
+    setTracklist(newTracklist);
+  }
 
   return (
     <div className='container'>
-      <Results addToTracklist={addToTracklist} tracklist={tracklist}/>
-      <Playlist tracklist={tracklist} />
+      <Results addToTracklist={addToTracklist} tracklist={tracklist} />
+      <Playlist tracklist={tracklist} removeTrack={removeTrack} />
     </div>
   );
 }

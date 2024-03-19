@@ -1,10 +1,11 @@
+// Playlist.js
 import '../tracklist/tracklist.css';
 import '../track/track.css'
 import '../SelectedTracks/SelectedTracks.js';
 import ParentComponent from '../tracklist/ParentComponent.js';
 
 
-function Playlist({tracklist}) {
+function Playlist({tracklist, removeTrack}) {
     return (
       <div className="tracklist">
         <input type='text' defaultValue="Playlist Name" className='playlistTitle'>
@@ -20,7 +21,7 @@ function Playlist({tracklist}) {
                   <div className="trackContainer">
                     <div className="title">{tracklist.track.title}</div>
                     <div className="artist">{tracklist.track.artist} | <span className='album'> {tracklist.track.album}</span></div>
-                    <button className="addButton">-</button>
+                    <button className="addButton" onClick={() => removeTrack(tracklist)}>-</button>
                   </div>
                 </li>
               ))}
