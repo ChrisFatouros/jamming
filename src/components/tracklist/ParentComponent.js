@@ -1,21 +1,20 @@
 // ParentComponent.js
 import React, { useState } from 'react';
-import Track from './Track';
-import { Tracklist } from './Tracklist';
+import Playlist from './Playlist.js';
+import Results from '../results/results';
 
 function ParentComponent() {
   const [tracklist, setTracklist] = useState([]);
 
-  const addToTracklist = (track) => {
+  function addToTracklist(track) {
     setTracklist([...tracklist, track]);
-  };
+    console.log(tracklist);
+    };
 
   return (
-    <div>
-      <h1>Tracks</h1>
-      <Track onAddToTracklist={addToTracklist} />
-      <h1>Tracklist</h1>
-      <Tracklist tracklist={tracklist} />
+    <div className='container'>
+      <Results addToTracklist={addToTracklist} tracklist={tracklist}/>
+      <Playlist tracklist={tracklist} />
     </div>
   );
 }

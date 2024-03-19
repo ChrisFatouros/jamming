@@ -3,11 +3,16 @@ import './components/header/headerNav.css';
 import './components/search/search.css';
 import './components/results/results.css';
 import SearchForm from './components/search/search.js';
-import Results from './components/results/results.js';
-import Tracklist from './components/tracklist/tracklist.js';
+import ParentComponent from './components/tracklist/ParentComponent.js';
+import { useState } from 'react';
 
 
 function App() {
+  
+  const [tracklist, setTracklist] = useState([]);
+  const addToTracklist = (track) => {
+    setTracklist([...tracklist, track]);
+    };
 
 
   return (
@@ -17,8 +22,7 @@ function App() {
       <SearchForm />
 
       <div className='container'>
-        <Results />
-        <Tracklist />
+        <ParentComponent />
       </div>
       
 
