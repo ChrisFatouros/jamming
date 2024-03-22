@@ -62,13 +62,13 @@ function App() {
       {!token ?
         <button onClick={handleLogin}>Login to Spotify</button>
       :
-        <button  onClick={logout}>Logout of Spotify</button>
+        <button onClick={logout}>Logout of Spotify</button>
       }
 
       <SearchForm token={token} sendDataToParent={receiveChildData}/>
 
       <div className='container'>
-        <ParentComponent childData={childData}/>
+        <ParentComponent childData={childData} token={token}/>
       </div>
 
     </div>
