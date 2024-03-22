@@ -48,6 +48,12 @@ function App() {
     setTracklist([...tracklist, track]);
     };
 
+  const [childData, setChildData] = useState('');
+  const receiveChildData = (data) => {
+    console.log('Data received from child:', data);
+    // Do something with the data received from child
+    setChildData(data);
+  };
 
   return (
     <div className="App bgImg">
@@ -56,15 +62,14 @@ function App() {
       {!token ?
         <button onClick={handleLogin}>Login to Spotify</button>
       :
-        <button onClick={logout}>Logout of Spotify</button>
+        <button  onClick={logout}>Logout of Spotify</button>
       }
 
-      <SearchForm token={token} />
+      <SearchForm token={token} sendDataToParent={receiveChildData}/>
 
       <div className='container'>
-        <ParentComponent />
+        <ParentComponent childData={childData}/>
       </div>
-
 
     </div>
   );

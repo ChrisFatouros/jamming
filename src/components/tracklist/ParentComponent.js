@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Playlist from './Playlist.js';
 import Results from '../results/results';
 
-function ParentComponent() {
+function ParentComponent({childData}) {
   const [tracklist, setTracklist] = useState([]);
   let playlistName = "";
 
@@ -32,7 +32,7 @@ function ParentComponent() {
   
   return (
     <div className='container'>
-      <Results addToTracklist={addToTracklist} tracklist={tracklist} />
+      <Results addToTracklist={addToTracklist} tracklist={tracklist} childData={childData}/>
       <Playlist tracklist={tracklist} removeTrack={removeTrack} handleSubmit={handleSubmit} />
     </div>
   );

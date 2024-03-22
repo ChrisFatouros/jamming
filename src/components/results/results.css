@@ -19,5 +19,8 @@
     border: none;
     margin-top: 1em;
     padding-top: 1vh;
+}
 
+img {
+    height: 100px;
 }

@@ -4,9 +4,9 @@ import App from '../../App';
 import axios from 'axios';
 
 
-function SearchForm({ onSearch, token }) {
+function SearchForm({ onSearch, token, sendDataToParent  }) {
   const [searchKey, setSearchKey] = useState("");
-  const [artists, setArtists] = useState([])
+  const [songs, setSongs] = useState([])
   const data = "";
 
   const searchArtists = async (e) => {
@@ -20,8 +20,13 @@ function SearchForm({ onSearch, token }) {
           type: "track"
         }
     })
-    console.log(data);
-    setArtists(data);
+    setSongs(data.tracks.items);
+    console.log(songs)
+  };
+
+  const sendData = () => {
+    // Invoke the function passed from parent with the data
+    sendDataToParent(songs);
   };
 
   return (
@@ -32,7 +37,7 @@ function SearchForm({ onSearch, token }) {
         placeholder="Search for songs ..."
         onChange={e => setSearchKey(e.target.value)}
       />
-      <button className='searchbutton' type="submit">Search</button>
+      <button className='searchbutton' type="submit" onClick={sendData}>Search</button>
     </form>
   );
 }
