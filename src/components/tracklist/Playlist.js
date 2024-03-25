@@ -1,7 +1,7 @@
 // Playlist.js
 import '../tracklist/tracklist.css';
 import '../track/track.css'
-import '../SelectedTracks/SelectedTracks.js';
+
 import ParentComponent from '../tracklist/ParentComponent.js';
 
 function Playlist({tracklist, removeTrack, handleSubmit, childData}) {

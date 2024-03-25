@@ -24,3 +24,13 @@
 img {
     height: 100px;
 }
+
+@media only screen and (max-width: 600px) {
+    .results {
+      width: 80vw;
+    }
+
+    .saveToButton {
+        width: 70vw;
+    }
+  }

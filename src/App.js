@@ -1,5 +1,4 @@
 import './App.css';
-import './components/header/headerNav.css';
 import './components/search/search.css';
 import './components/results/results.css';
 import SearchForm from './components/search/search.js';
@@ -51,7 +50,6 @@ function App() {
   const [childData, setChildData] = useState('');
   const receiveChildData = (data) => {
     console.log('Data received from child:', data);
-    // Do something with the data received from child
     setChildData(data);
   };
 
@@ -60,9 +58,9 @@ function App() {
       <header className="headerNav">Harmony Hub</header>
       
       {!token ?
-        <button onClick={handleLogin}>Login to Spotify</button>
+        <button className="loginButton" onClick={handleLogin}>Login to Spotify</button>
       :
-        <button onClick={logout}>Logout of Spotify</button>
+        <button className="loginButton" onClick={logout}>Logout of Spotify</button>
       }
 
       <SearchForm token={token} sendDataToParent={receiveChildData}/>

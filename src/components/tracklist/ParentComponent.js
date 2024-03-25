@@ -2,11 +2,12 @@
 import React, { useState } from 'react';
 import Playlist from './Playlist.js';
 import Results from '../results/results';
+import "../tracklist/tracklist.css";
 import axios from 'axios';
 
 function ParentComponent({childData, token}) {
   const [tracklist, setTracklist] = useState([]);
-  let playlistName = "";
+  const [submitted, setSubmitted] = useState(false); // State to manage submission status
 
   function addToTracklist(track) {
     if (!tracklist.some(item => item.id === track.id)) {
@@ -53,18 +54,34 @@ function ParentComponent({childData, token}) {
         });
       }
   
-      console.log("Playlist created and tracks added successfully");
+      // Set submitted to true on successful submission
+      setSubmitted(true);
     } catch (error) {
       console.error("Error creating playlist: ", error.response.data);
     }
   };
-  
+
+  const handleRefresh = () => {
+    window.location.reload();
+  };
   
   return (
     <>
     <div className='container'>
-      <Results addToTracklist={addToTracklist} tracklist={tracklist} childData={childData}/>
-      <Playlist tracklist={tracklist} removeTrack={removeTrack} handleSubmit={handleSubmit} childData={childData}/>
+      {submitted ? (
+        <div>
+          <div className='successBox'>
+            <h2>Success!</h2>
+            <p>Your playlist has been created and tracks have been added successfully.</p>
+            <button className='successButton' onClick={handleRefresh}>Continue</button>
+          </div>
+        </div>
+      ) : (
+        <>
+          <Results addToTracklist={addToTracklist} tracklist={tracklist} childData={childData}/>
+          <Playlist tracklist={tracklist} removeTrack={removeTrack} handleSubmit={handleSubmit} childData={childData}/>
+        </>
+      )}
     </div>
     </>
   );

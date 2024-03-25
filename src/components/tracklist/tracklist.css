@@ -10,9 +10,24 @@
     margin-top: 5vh;
 }
 
+@media only screen and (max-width: 600px) {
+    .tracklist {
+      width: 80vw;
+    }
+
+    .saveToButton {
+        width: 70vw;
+    }
+  }
+
+  @media only screen and (min-width: 600px) {
+    .saveToButton {
+        width: 20vw;
+    }
+  }
+
 .saveToButton {
     border-radius: 15px;
-    width: 20vw;
     background-color: rgb(104, 14, 146);
     color: aliceblue;
     border: none;
@@ -51,4 +66,31 @@ hr {
     height: 0px;
     border-radius: 5px;
     opacity: .25;
+}
+
+.successBox {
+    background-color: rgba(0, 0, 0, .5);
+    width: 40vw;
+    height: auto;
+    display: grid;
+    text-align: left;
+    border-radius: 10px;
+    color: white;
+    padding: 0vh 2vw;
+    margin-top: 5vh;
+    padding-bottom: 5vh;
+}
+
+.successButton {
+    border-radius: 15px;
+    background-color: rgb(104, 14, 146);
+    color: aliceblue;
+    border: none;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: bold;
+    justify-self: center;
+    margin-bottom: 2vh;
+    height: 50px;
+    font-size: 1rem;
+    padding: 1vh 2vw;
 }
