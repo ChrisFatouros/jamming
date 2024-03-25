@@ -9,7 +9,7 @@ import axios from 'axios';
 function App() {
 
     var client_id = 'a5d40fe661a741f68f7f27b86314c444';
-    var redirect_uri = 'https://chrisfatouros.github.io/jamming/';
+    var redirect_uri = 'https://chrisfatouros.github.io/jamming';
     var scope = 'user-read-private user-read-email playlist-modify-private playlist-modify-public';
     var state = '';
 
